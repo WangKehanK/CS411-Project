@@ -18,8 +18,8 @@ The two APIs we will incorporate are shown as follows:
 - Lyrics API: https://apiseeds.com/documentation/lyrics
 
 # Contributor
-Kehan Wang
-Xiaochen Xue
-Malcolm Tom
-Yaoxingyue Zhao
+Kehan Wang,
+Xiaochen Xue,
+Malcolm Tom,
+Yaoxingyue Zhao,
 Yu Xia
