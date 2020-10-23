@@ -16,3 +16,10 @@ The two APIs we will incorporate are shown as follows:
 
 - Spotify API: https://developer.spotify.com/documentation/web-api/
 - Lyrics API: https://apiseeds.com/documentation/lyrics
+
+# Contributor
+Kehan Wang,
+Xiaochen Xue,
+Malcolm Tom,
+Yaoxingyue Zhao,
+Yu Xia
