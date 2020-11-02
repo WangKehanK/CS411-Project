@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  //h1= Crypto
+  p Welcome to Crypto Dashboard
+
+  body
+    form(action='/', method='GET')
+      p
+        | What crypto are you looking for? (Please enter tickers like, BTCUSDT, BNBBTC and etc):
+        input(type='text', name='ticker', value='')
+      input(type='submit', value='Submit')
+
+      p #{ticker_price}
+
