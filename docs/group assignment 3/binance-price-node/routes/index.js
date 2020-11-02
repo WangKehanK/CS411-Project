@@ -13,12 +13,12 @@ router.get('/', function(req, res, next) {
   const target_ticker = req.query.ticker;
   console.log(target_ticker);
   if(typeof target_ticker == "undefined"){
-    res.render('index', {ticker_price: " "});
+    res.render('index', {ticker: " ", ticker_price: " "});
   }
   binance.prices(target_ticker, (error, ticker) => {
     const price = ticker[Object.keys(ticker)[0]];
     console.info("Price of BTC: ", price);
-    res.render('index', { ticker_price: price });
+    res.render('index', {ticker: req.query.ticker, ticker_price: price });
   });
 });
 
