@@ -15,6 +15,7 @@ b. Django is written in the Python language; this means it is using the easiest 
 Disadvantages-
 
 a. Template errors fail silently by default, so we might waste a lot of time trying to figure out what’s wrong with the application, or not even know that our application has a problem.
+
 b. The URL specifying regular expressions is not an easy task to accomplish.
 
 ## Why we chose NodeJS
