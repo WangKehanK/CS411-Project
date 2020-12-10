@@ -1,0 +1,110 @@
+<template>
+    <div class="content-box">
+        <div class="menu-bar2">
+          <template v-if="user.loggedIn">
+            <!-- <div class="nav-item">{{user.data.displayName}}</div> -->
+            <button class="login-btn" @click.prevent="signOut">
+              Sign out
+            </button>
+            <button class="login-btn" @click='test'>
+              {{user.data.email}}
+            </button>
+          </template>
+          <template v-else>
+            <button class="login-btn" v-if="currentPage === 'dashboard'" @click="$router.push({ path:'/login'})">
+              LOGIN
+            </button>
+            <button class="account-btn" @click="$router.push({path:'/register'})">REGISTER
+            </button>
+          </template>
+        </div>
+        <div class="menu-bar">
+            <v-select id="base" :options="currencyList[quote]" :clearable="false" v-model="baseCurrency" placeholder="Select Token"></v-select>
+            <span class="slash">/</span>
+            <v-select id="quote" :options="quoteOptions" :searchable="false" :clearable="false" v-model="quote" @input="resetBase" style="width: 100px"></v-select>
+            <button class="add-btn" @click="addCoinPair"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
+        </div>
+        <CryptoBoard></CryptoBoard>
+    </div>
+</template>
+<script>
+  /* eslint-disable no-unused-vars */
+  import vSelect from 'vue-select'
+  import coins from '@/assets/group.json'
+  import CryptoBoard from '@/views/CryptoBoard.vue'
+  import { isEmpty } from '@/Utility'
+  import {subscribeSymbol} from '@/services/binance'
+  import { mapState } from 'vuex'
+  import Swal from 'sweetalert2'
+  import firebase from 'firebase'
+  export default {
+    name: 'dashboard',
+    data() {
+      return {
+        currentPage: 'dashboard',
+        currencyList: coins,
+        quote: 'BTC',
+        quoteOptions: ['BTC','ETH', 'USDT'],
+        baseCurrency: {}
+      }
+    },
+    mounted(){
+      if(this.currencies) {
+        this.currencies.forEach(currency => {
+          subscribeSymbol(currency.symbol);
+        });
+      }
+    },
+    computed: {
+      ...mapState(['currencies']),
+      ...mapState({
+        user:"user"
+      })
+    },
+    components: {
+      vSelect,
+      CryptoBoard,
+      Swal
+    },
+    methods: {
+      resetBase() {
+        this.baseCurrency = {}
+      },
+      test(){
+        //console.log(this.user)
+      },
+      addCoinPair() {
+        if(!isEmpty(this.baseCurrency)){
+          const symbol = `${this.baseCurrency.value}${this.quote}`;
+          subscribeSymbol(symbol);
+          this.$store.commit('ADD_COIN_PAIR',{"symbol": symbol ,"base": this.baseCurrency.value, "quote": this.quote, "name": this.baseCurrency.name})
+          // //console.log(this.currencies);
+          // window.alert("Added!")
+          Swal.fire({
+            title: 'Confirmed!',
+            icon: 'success',
+            confirmButtonText: 'OK'
+          })
+          for(var key in this.currencies){
+            //console.log(this.currencies[key].symbol)
+          }
+        }else {
+          //console.log('Empty!')
+          Swal.fire({
+            title: 'Please select token first',
+            icon: 'error',
+            confirmButtonText: 'OK'
+          })
+        }
+      },
+      signOut() {
+        firebase
+          .auth()
+          .signOut()
+          .then(() => {
+            this.$router.go({ path:'/'});
+          });
+      }
+    }
+  }
+</script>

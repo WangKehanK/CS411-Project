@@ -1,0 +1,6 @@
+[
+  {"symbol":"BTCUSDT","base":"BTC","quote":"USDT","name":"Bitcoin"},
+  {"symbol":"ETHUSDT","base":"ETH","quote":"USDT","name":"Ethereum"},
+  {"symbol":"EOSUSDT","base":"EOS","quote":"USDT","name":"EOS"},
+  {"symbol":"XRPUSDT","base":"XRP","quote":"USDT","name":"XRP"}
+]
