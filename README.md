@@ -3,9 +3,9 @@ CS411 Project Team19
 
 # Tech
 
-###Vue.js
+### Vue.js
 
-###Firebase
+### Firebase
 
 # Contributor
 Kehan Wang,
