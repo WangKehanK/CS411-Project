@@ -4,14 +4,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "keywords": [
-    "crypto",
-    "cryptocurrency",
-    "dashboard",
-    "binance",
-    "amchart",
-    "realtime price",
-    "vue",
-    "vue.js"
+    "cryptocurrency"
   ],
   "scripts": {
     "serve": "vue-cli-service serve",
