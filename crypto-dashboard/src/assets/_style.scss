@@ -113,11 +113,60 @@ button:focus {
   background-color: #333;
   //box-shadow: 0 2px 20px rgba(0, 0, 0, 0.42);
   #base {
-    width: 342px;
+    width: 200px;
+    font-family: sans-serif;
   }
   #quote {
-    width: 100px;
     margin-left: 10px;
+    font-family: sans-serif;
+  }
+  .add-coin-btn{
+    text-align: center;
+    height: 50%;
+    font-family: sans-serif;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: #fef9d7;
+    margin: 0 0 0 10px;
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    z-index: 999;
+    i{
+      vertical-align: middle;
+    }
+    &:hover{
+      background-color: #2C2C2C;
+      box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+      color: #fff;
+    }
+  }
+  .question-btn{
+    text-align: center;
+    height: 50%;
+    font-family: sans-serif;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    background-color: #fef9d7;
+    margin: 0 0 0 10px;
+    cursor: pointer;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+    z-index: 999;
+    i{
+      vertical-align: middle;
+    }
+    &:hover{
+      background-color: #2C2C2C;
+      box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+      color: #fff;
+    }
   }
 }
 

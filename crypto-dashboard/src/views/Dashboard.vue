@@ -21,8 +21,9 @@
         <div class="menu-bar">
             <v-select id="base" :options="currencyList[quote]" :clearable="false" v-model="baseCurrency" placeholder="Select Token"></v-select>
             <span class="slash">/</span>
-            <v-select id="quote" :options="quoteOptions" :searchable="false" :clearable="false" v-model="quote" @input="resetBase" style="width: 100px"></v-select>
-            <button class="login-btn" @click="addCoinPair"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
+            <v-select id="quote" :options="quoteOptions" :searchable="false" :clearable="false" v-model="quote" @input="resetBase" style="width: 80px"></v-select>
+            <button class="add-coin-btn" @click="addCoinPair">Add</button>
+            <button class="question-btn" @click="submitQuestion">Question?</button>
         </div>
         <CryptoBoard></CryptoBoard>
     </div>
@@ -36,7 +37,7 @@
   import {subscribeSymbol} from '@/services/binance'
   import { mapState } from 'vuex'
   import Swal from 'sweetalert2'
-import { firebase } from '@firebase/app'
+  import { firebase } from '@firebase/app'
   import '@firebase/auth'
   export default {
     name: 'dashboard',
@@ -105,6 +106,17 @@ import { firebase } from '@firebase/app'
           .then(() => {
             this.$router.go({ path:'/'});
           });
+      },
+      submitQuestion() {
+          const value = Swal.fire({
+            title: 'Cannot find the desired token?',
+            icon: 'question',
+            input: 'text',
+            inputLabel: 'Enter the token here e.g. BTC, we will update in 24hrs',
+            inputValue: '',
+            showCancelButton: true,
+            inputPlaceholder: 'Enter the token here'
+          })
       }
     }
   }
