@@ -108,3 +108,4 @@ docs/group assignment 3/binance-price-node/config.js
 firebase.json
 .firebaserc
 crypto-dashboard/src/config.js
+.firebase
