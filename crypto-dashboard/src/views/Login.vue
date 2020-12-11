@@ -57,7 +57,8 @@
 
 <script>
 /* eslint-disable no-unused-vars */
-import firebase from "firebase";
+import { firebase } from '@firebase/app'
+import '@firebase/auth'
 import Swal from 'sweetalert2';
 
 export default {

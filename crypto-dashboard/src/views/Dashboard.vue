@@ -22,7 +22,7 @@
             <v-select id="base" :options="currencyList[quote]" :clearable="false" v-model="baseCurrency" placeholder="Select Token"></v-select>
             <span class="slash">/</span>
             <v-select id="quote" :options="quoteOptions" :searchable="false" :clearable="false" v-model="quote" @input="resetBase" style="width: 100px"></v-select>
-            <button class="add-btn" @click="addCoinPair"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
+            <button class="login-btn" @click="addCoinPair"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
         </div>
         <CryptoBoard></CryptoBoard>
     </div>
@@ -32,11 +32,12 @@
   import vSelect from 'vue-select'
   import coins from '@/assets/group.json'
   import CryptoBoard from '@/views/CryptoBoard.vue'
-  import { isEmpty } from '@/Utility'
+  import { isEmpty } from '@/other/util'
   import {subscribeSymbol} from '@/services/binance'
   import { mapState } from 'vuex'
   import Swal from 'sweetalert2'
-  import firebase from 'firebase'
+import { firebase } from '@firebase/app'
+  import '@firebase/auth'
   export default {
     name: 'dashboard',
     data() {

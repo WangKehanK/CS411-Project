@@ -2,13 +2,15 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import './registerServiceWorker'
 import "./assets/vendor/font-awesome/css/font-awesome.css";
 import "./assets/app.scss"
 import { firebase } from '@firebase/app'
 import '@firebase/auth'
-import clickOutside from "./directives/click-ouside"
-import VueParticlesBg from "particles-bg-vue";
+
+import clickOutside from "./other/click-ouside"
+import './other/service-worker'
+
+import VueParticlesBg from 'particles-bg-vue';
 import VueSimpleAlert from 'vue-simple-alert'
 
 import firebaseConfig from './config';
