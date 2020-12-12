@@ -24,6 +24,7 @@
             <v-select id="quote" :options="quoteOptions" :searchable="false" :clearable="false" v-model="quote" @input="resetBase" style="width: 80px"></v-select>
             <button class="add-coin-btn" @click="addCoinPair">Add</button>
             <button class="question-btn" @click="submitQuestion">Question?</button>
+            <button class="question-btn" @click="submitQuestion">Clear</button>
         </div>
         <CryptoBoard></CryptoBoard>
     </div>
@@ -117,7 +118,14 @@
             showCancelButton: true,
             inputPlaceholder: 'Enter the token here'
           })
+      },
+      settoDefault() {
+        for(var key in this.currencies){
+            console.log(this.currencies[key].symbol)
+          }
+
       }
+
     }
   }
 </script>
