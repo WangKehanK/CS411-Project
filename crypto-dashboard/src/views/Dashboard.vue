@@ -24,7 +24,7 @@
             <v-select id="quote" :options="quoteOptions" :searchable="false" :clearable="false" v-model="quote" @input="resetBase" style="width: 80px"></v-select>
             <button class="add-coin-btn" @click="addCoinPair">Add</button>
             <button class="question-btn" @click="submitQuestion">Question?</button>
-            <button class="question-btn" @click="submitQuestion">Clear</button>
+            <button class="question-btn" @click="settoDefault">Reset</button>
         </div>
         <CryptoBoard></CryptoBoard>
     </div>
@@ -32,10 +32,11 @@
 <script>
   /* eslint-disable no-unused-vars */
   import vSelect from 'vue-select'
+  import defaultPair from '@/assets/defaultpair.json'
   import coins from '@/assets/group.json'
   import CryptoBoard from '@/views/CryptoBoard.vue'
   import { isEmpty } from '@/other/util'
-  import {subscribeSymbol} from '@/services/binance'
+  import {subscribeSymbol, unSubscribeSymbol} from '@/services/binance'
   import { mapState } from 'vuex'
   import Swal from 'sweetalert2'
   import { firebase } from '@firebase/app'
@@ -81,18 +82,12 @@
           const symbol = `${this.baseCurrency.value}${this.quote}`;
           subscribeSymbol(symbol);
           this.$store.commit('ADD_COIN_PAIR',{"symbol": symbol ,"base": this.baseCurrency.value, "quote": this.quote, "name": this.baseCurrency.name})
-          // //console.log(this.currencies);
-          // window.alert("Added!")
           Swal.fire({
             title: 'Confirmed!',
             icon: 'success',
             confirmButtonText: 'OK'
           })
-          for(var key in this.currencies){
-            //console.log(this.currencies[key].symbol)
-          }
         }else {
-          //console.log('Empty!')
           Swal.fire({
             title: 'Please select token first',
             icon: 'error',
@@ -120,12 +115,16 @@
           })
       },
       settoDefault() {
+        const SymbolArray = defaultPair.map (item => item.symbol);
+        // ["BTCUSDT", "ETHUSDT", "EOSUSDT", "XRPUSDT"]
         for(var key in this.currencies){
-            console.log(this.currencies[key].symbol)
-          }
-
+            const value = this.currencies[key].symbol
+            if(!(SymbolArray.includes(value))){
+              unSubscribeSymbol(value);
+              this.$store.commit('REMOVE_COIN_PAIR', value);
+            }
+        }
       }
-
     }
   }
 </script>
