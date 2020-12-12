@@ -27,9 +27,9 @@
                 </div>
             </div>
         </div>
-        <div class="sparkline-chart" v-if="ticker.price">
+        <!-- <div class="sparkline-chart" v-if="ticker.price">
             <Sparkline :cdata="ticker.price" :width="380" :height="90"></Sparkline>
-        </div>
+        </div> -->
     </div>
 </template>
 <script>
