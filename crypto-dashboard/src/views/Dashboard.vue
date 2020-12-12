@@ -116,15 +116,13 @@
       },
       settoDefault() {
         const SymbolArray = defaultPair.map (item => item.symbol);
-        // ["BTCUSDT", "ETHUSDT", "EOSUSDT", "XRPUSDT"]
-        for(var key in this.currencies){
-            const value = this.currencies[key].symbol
-            if(!(SymbolArray.includes(value))){
-              unSubscribeSymbol(value);
-              this.$store.commit('REMOVE_COIN_PAIR', value);
-            }
-        }
-      }
+        const CurrentSymbolArray = this.currencies.map (item => item.symbol);
+        const difference = CurrentSymbolArray.filter(x => SymbolArray.indexOf(x) === -1);
+        difference.map(item => {
+          unSubscribeSymbol(item)
+          this.$store.commit('REMOVE_COIN_PAIR', item)
+        })
+      },
     }
   }
 </script>
