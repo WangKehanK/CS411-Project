@@ -117,11 +117,26 @@
       settoDefault() {
         const SymbolArray = defaultPair.map (item => item.symbol);
         const CurrentSymbolArray = this.currencies.map (item => item.symbol);
-        const difference = CurrentSymbolArray.filter(x => SymbolArray.indexOf(x) === -1);
-        difference.map(item => {
-          unSubscribeSymbol(item)
-          this.$store.commit('REMOVE_COIN_PAIR', item)
-        })
+        if (SymbolArray.length < CurrentSymbolArray.length){
+          const difference = CurrentSymbolArray.filter(x => SymbolArray.indexOf(x) === -1);
+          difference.map(item => {
+            unSubscribeSymbol(item)
+            this.$store.commit('REMOVE_COIN_PAIR', item)
+          })
+        } else if (SymbolArray.length > CurrentSymbolArray.length){
+          console.log(1);
+          const difference = SymbolArray.filter(x => CurrentSymbolArray.indexOf(x) === -1);
+          console.log(difference)
+          difference.map(item => {
+            defaultPair.map (curr => {
+              if (curr.symbol == item){
+                console.log(curr.base)
+                subscribeSymbol(item)
+                this.$store.commit('ADD_COIN_PAIR', {"symbol": item ,"base": curr.base, "quote": curr.quote, "name": curr.name})
+              }
+            })
+          })
+        }
       },
     }
   }
