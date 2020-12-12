@@ -11,12 +11,11 @@ import clickOutside from "./other/click-ouside"
 import './other/service-worker'
 
 import VueParticlesBg from 'particles-bg-vue';
-import VueSimpleAlert from 'vue-simple-alert'
 
 import firebaseConfig from './config';
 
 Vue.directive("click-outside", clickOutside);
-Vue.use(VueParticlesBg, VueSimpleAlert);
+Vue.use(VueParticlesBg);
 
 
 

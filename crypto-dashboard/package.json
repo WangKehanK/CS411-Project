@@ -20,7 +20,7 @@
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.4.1",
     "firebase": "^8.0.2",
-    "firebase-tools": "^8.18.0",
+    "firebase-tools": "^8.19.0",
     "firebaseui": "^4.7.1",
     "moment": "github:moment/moment",
     "particles-bg-vue": "^1.3.5",
