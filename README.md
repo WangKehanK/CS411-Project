@@ -3,7 +3,7 @@ CS411 Project Team19
 
 # Demo
 
-Click here to watch the youtube video
+Click [here](https://www.youtube.com/watch?v=__axDDr3HoA&t=1s&ab_channel=KehanWang) or the following image to watch the demo
 
 [![demo](http://img.youtube.com/vi/__axDDr3HoA/0.jpg)](http://www.youtube.com/watch?v=__axDDr3HoA "Demo")
 
