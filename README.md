@@ -3,8 +3,12 @@ CS411 Project Team19
 
 # Demo
 
-## How to add coin?
+## How to add a coin?
 ![add_coin_pair](https://github.com/WangKehanK/CS411-Project/blob/main/demo/add_coin_pair.gif)
+
+## How to delete a coin?
+![remove_coin_pair](https://github.com/WangKehanK/CS411-Project/blob/main/demo/remove_coin_pair.gif)
+
 
 # Tech
 
