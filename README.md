@@ -2,6 +2,7 @@
 CS411 Project Team19
 
 # Demo
+[![demo](http://img.youtube.com/vi/__axDDr3HoA/0.jpg)](http://www.youtube.com/watch?v=__axDDr3HoA "Demo")
 
 ## How to add a coin?
 ![add_coin_pair](https://github.com/WangKehanK/CS411-Project/blob/main/demo/add_coin_pair.gif)
