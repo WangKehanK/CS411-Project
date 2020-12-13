@@ -2,6 +2,9 @@
 CS411 Project Team19
 
 # Demo
+
+Click here to watch the youtube video
+
 [![demo](http://img.youtube.com/vi/__axDDr3HoA/0.jpg)](http://www.youtube.com/watch?v=__axDDr3HoA "Demo")
 
 ## How to add a coin?
