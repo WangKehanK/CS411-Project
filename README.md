@@ -3,6 +3,9 @@ CS411 Project Team19
 
 # Demo
 
+## How to add coin?
+![add_coin_pair](https://github.com/WangKehanK/CS411-Project/blob/main/demo/add_coin_pair.gif)
+
 # Tech
 
 ### Vue.js
