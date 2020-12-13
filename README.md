@@ -1,7 +1,7 @@
 # CS411-Project
 CS411 Project Team19
 
-Live at cs411-28258.web.app/
+Live at [cs411-28258.web.app/](cs411-28258.web.app/)
 
 # Demo
 
