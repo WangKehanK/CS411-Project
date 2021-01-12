@@ -1,5 +1,4 @@
 # CS411-Project
-CS411 Project Team19
 
 Live at [cs411-28258.web.app/](cs411-28258.web.app/)
 
@@ -23,8 +22,4 @@ Click [here](https://www.youtube.com/watch?v=__axDDr3HoA&t=1s&ab_channel=KehanWa
 ### Firebase
 
 # Contributor
-Kehan Wang,
-Xiaochen Xue,
-Malcolm Tom,
-Yaoxingyue Zhao,
-Yu Xia
+Kehan Wang
